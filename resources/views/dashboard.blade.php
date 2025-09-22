@@ -42,7 +42,7 @@
     .sidebar-brand-text,
     li span,
     li a i {
-        color: #6B4226;
+        color: black;
     }
 
     .sidebar-heading {
@@ -77,7 +77,7 @@
 
                  <!-- Nav Item - Dashboard -->
                  <li class="nav-item active">
-                     <a class="nav-link" href="index.html">
+                     <a class="nav-link" href="/dashboard">
                          <i style="color:#6B4226;" class="fas fa-fw fa-tachometer-alt"></i>
                          <span>Dashboard</span></a>
                  </li>
