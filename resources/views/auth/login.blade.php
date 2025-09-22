@@ -1,58 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House - Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
     @include('components.headerKedua')
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/feather-icons"></script>
-        <!-- <img class="absolute top-0 bottom-0 left-0 right-0 w-full h-full  " src="/img/header-bg.jpeg" alt=""> -->
 
-    <x-guest-layout>
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+  <div class="card-login">
+    <h1>Coffe Colon</h1>
+    <p>Selamat datang pengunjung ☕️</p>
 
-        <form class="z-20" method="POST" action="{{ route('login') }}">
-            @csrf
+    <!-- Laravel form -->
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
 
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
+      <div class="container-input">
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+        <!-- Email -->
+        <div class="form-group">
+          <input id="email" type="email" name="email"
+                 value="{{ old('email') }}"
+                 placeholder="Email" required autofocus autocomplete="username">
+          @error('email')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
+        </div>
 
-                <x-text-input id="password" class="block mt-1 w-full"
-                    type="password"
-                    name="password"
-                    required autocomplete="current-password" />
+        <!-- Password -->
+        <div class="form-group">
+          <input id="password" type="password" name="password"
+                 placeholder="Password" required autocomplete="current-password">
+          @error('password')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
+        </div>
+      </div>
 
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
-            </div>
+      <!-- Remember me + Forgot password -->
+      <div class="options flex items-center justify-between">
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                    <span class="ms-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+        <label>
+          <input id="remember_me" type="checkbox" name="remember"> Ingat saya
+        </label>
 
-            <div class="flex items-center justify-end mt-4 ">
-                @if (Route::has('register'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 ml-2" href="{{ route('register') }}">
-                    {{ __('Dont Have An Account?') }}
-                </a>
-                @endif
+        @if (Route::has('password.request'))
+          <a href="{{ route('password.request') }}">Lupa password?</a>
+        @endif
+      </div>
 
+      <!-- Submit -->
+      <button type="submit" class="btn-login">
+        <i class="fas fa-mug-hot"></i> Masuk
+      </button>
+    </form>
 
-                @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                    {{ __('Forgot Password?') }}
-                </a>
-                @endif
-                <x-primary-button class="ms-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-            </div>
-        </form>
-    </x-guest-layout>
+    <!-- Register -->
+    <div class="footer">
+        @if (Route::has('register'))
+          Belum punya akun? <a href="{{ route('register') }}">Daftar</a>
+        @endif
+    </div>
+  </div>
+</body>
+
+</html>
