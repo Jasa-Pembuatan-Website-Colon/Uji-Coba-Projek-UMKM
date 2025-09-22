@@ -35,3 +35,7 @@ Route::resource('orders', OrderController::class);
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
+
+Route::get('/payment', function () {
+    return view('payment');
+});
