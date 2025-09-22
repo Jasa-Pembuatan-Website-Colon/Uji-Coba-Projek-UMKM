@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Kedai Kopi Dashboard</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen font-sans">
 <div class="flex min-h-screen">
