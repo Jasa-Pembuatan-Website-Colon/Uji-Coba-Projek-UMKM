@@ -2,11 +2,11 @@
         <a href="#" class="navbar-logo">kenangan<span>senja</span>.</a>
 
         <div class="navbar-nav">
-            <a href="/login">Dashboard</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#menu">Menu</a>
-            <a href="#products">Produk</a>
-            <a href="#contact">Kontak</a>
+            <a href="/#">Home</a>
+            <a href="/#about">Tentang Kami</a>
+            <a href="/#menu">Menu</a>
+            <a href="/#products">Produk</a>
+            <a href="/#contact">Kontak</a>
         </div>
 
         <div class="navbar-extra">
