@@ -8,9 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+       background: linear-gradient(to bottom right, #f3ebe7, #e4d1c6, #fdfcfb);
+       color: #422b21;
+    }
+  </style>
     @include('components.headerKedua')
 
   <div class="card-login">
