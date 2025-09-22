@@ -1,55 +1,95 @@
-@include('components.headerKedua')
-<link rel="stylesheet" href="css/style.css">
+<!DOCTYPE html>
+<html lang="id">
 
-<x-guest-layout>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House - Register</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #f3ebe7, #e4d1c6, #fdfcfb);
+      color: #422b21;
+    }
+  </style>
+
+  @include('components.headerKedua')
+
+  <div class="card-login">
+    <h1>Coffe Colon</h1>
+    <p>Daftar untuk mulai menikmati layanan kami ☕️</p>
+
+    <!-- Laravel Register Form -->
     <form method="POST" action="{{ route('register') }}">
-        @csrf
+      @csrf
+
+      <div class="container-input">
 
         <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+        <div class="form-group">
+          <input id="name" type="text" name="name"
+                 value="{{ old('name') }}"
+                 placeholder="Nama Lengkap" required autofocus autocomplete="name">
+          @error('name')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
         </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <!-- Email -->
+        <div class="form-group">
+          <input id="email" type="email" name="email"
+                 value="{{ old('email') }}"
+                 placeholder="Email" required autocomplete="username">
+          @error('email')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+        <div class="form-group">
+          <input id="password" type="password" name="password"
+                 placeholder="Password" required autocomplete="new-password">
+          @error('password')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
         </div>
 
         <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+        <div class="form-group">
+          <input id="password_confirmation" type="password"
+                 name="password_confirmation"
+                 placeholder="Konfirmasi Password" required autocomplete="new-password">
+          @error('password_confirmation')
+            <div class="text-red-600 text-sm mt-1">{{ $message }}</div>
+          @enderror
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+      </div>
 
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
+      <!-- Submit -->
+      <button type="submit" class="btn-login">
+        <i class="fas fa-user-plus"></i> Daftar
+      </button>
     </form>
-</x-guest-layout>
+
+    <!-- Login link -->
+    <div class="footer">
+      <p>Sudah punya akun?
+        <a href="{{ route('login') }}">Login</a>
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>
