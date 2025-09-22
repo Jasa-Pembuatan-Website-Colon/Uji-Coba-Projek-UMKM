@@ -21,7 +21,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Font Awesome 6.6.0 CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-
+    
 </head>
 <style>
     .navbar-nav,
@@ -34,6 +34,28 @@
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
     }
 
+    .nav-item{
+        transition:  ease-in;
+    }
+
+    .nav-item:hover,li:hover .nav-link .icon-side,li:hover .nav-link span{
+        background: #6B4226;
+        border-radius: 10px;
+        color: #ffffff !important;
+    }
+
+    .nav-item:hover~.icon-side{
+        color: #ffffff !important;
+    }
+
+    .icon-side{
+        color: #6B4226 !important;
+    }
+
+    .logout-icon{
+        color: red !important;
+    }
+
     .sidebar{
           box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 
@@ -41,18 +63,20 @@
 
     .sidebar-brand-text,
     li span,
-    li a i {
-        color: black;
-    }
-
-    .sidebar-heading {
+    li a i{
         color: #6B4226;
     }
 
-    .card-header h6 {
+    .sidebar-heading{
         color: #6B4226;
-
     }
+
+    .card-header h6{
+        color: #6B4226;
+    }
+
+
+
 </style>
 
 <body id="page-top">
@@ -78,7 +102,7 @@
                  <!-- Nav Item - Dashboard -->
                  <li class="nav-item active">
                      <a class="nav-link" href="/dashboard">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-tachometer-alt"></i>
+                         <i class="icon-side fas fa-fw fa-tachometer-alt"></i>
                          <span>Dashboard</span></a>
                  </li>
 
@@ -94,7 +118,7 @@
                  <li class="nav-item">
                      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                          aria-expanded="true" aria-controls="collapseTwo">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-cog"></i>
+                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-cog"></i>
                          <span>Components</span>
                      </a>
                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -110,7 +134,7 @@
                  <li class="nav-item">
                      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                          aria-expanded="true" aria-controls="collapseUtilities">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-wrench"></i>
+                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-wrench"></i>
                          <span>Utilities</span>
                      </a>
                      <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -137,7 +161,7 @@
                  <li class="nav-item">
                      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                          aria-expanded="true" aria-controls="collapsePages">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-folder"></i>
+                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-folder"></i>
                          <span>Pages</span>
                      </a>
                      <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -157,17 +181,24 @@
                  <!-- Nav Item - Charts -->
                  <li class="nav-item">
                      <a class="nav-link" href="charts.html">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-chart-area"></i>
+                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-chart-area"></i>
                          <span>Charts</span></a>
                  </li>
 
                  <!-- Nav Item - Tables -->
                  <li class="nav-item">
                      <a class="nav-link" href="tables.html">
-                         <i style="color:#6B4226;" class="fas fa-fw fa-table"></i>
+                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-table"></i>
                          <span>Tables</span></a>
                  </li>
-
+                 
+                 <li class="nav-item">
+                    <a class="nav-link" href="">
+                        <i style="color: red;" class="icon-side logout-icon fa-solid fa-arrow-right-from-bracket text-red-700"></i>
+                        <span style="color: red;" class="text-red-700">logout</span>
+                    </a>
+                 </li>  
+                 
                  <!-- Divider -->
                  <hr class="sidebar-divider d-none d-md-block">
 
@@ -182,6 +213,7 @@
                      <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                      <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
                  </div>
+
 
              </ul>
 
@@ -209,7 +241,7 @@
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                                 aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn bg-light" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
