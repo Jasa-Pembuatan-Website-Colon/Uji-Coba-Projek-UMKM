@@ -21,7 +21,7 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- Font Awesome 6.6.0 CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
-    
+
 </head>
 <style>
     .navbar-nav,
@@ -34,49 +34,57 @@
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
     }
 
-    .nav-item{
-        transition:  ease-in;
+    .nav-item {
+        transition: ease-in;
     }
 
-    .nav-item:hover,li:hover .nav-link .icon-side,li:hover .nav-link span{
-        background: #6B4226;
+    .nav-item:hover,
+    li:hover .nav-link .icon-side,
+    li:hover .nav-link span {
+        /* background: #6B4226; */
         border-radius: 10px;
         color: #ffffff !important;
     }
 
-    .nav-item:hover~.icon-side{
+    .nav-item:hover~.icon-side {
         color: #ffffff !important;
     }
 
-    .icon-side{
+    .icon-side {
         color: #6B4226 !important;
     }
 
-    .logout-icon{
+    .logout-icon {
         color: red !important;
     }
 
-    .sidebar{
-          box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    .sidebar {
+        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 
     }
 
     .sidebar-brand-text,
     li span,
-    li a i{
+    li a i {
         color: #6B4226;
     }
 
-    .sidebar-heading{
+    .sidebar-heading {
         color: #6B4226;
     }
 
-    .card-header h6{
+    .card-header h6 {
         color: #6B4226;
     }
 
+    #sideBar-link:hover {
+        background: #6B4226;
+    }
 
-
+    .senja {
+        color: #9b5e36;
+        text-decoration: underline;
+    }
 </style>
 
 <body id="page-top">
@@ -85,139 +93,145 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-         <div class="sidebar">
-             <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
+        <div class="sidebar">
+            <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                 <!-- Sidebar - Brand -->
-                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                     <div class="sidebar-brand-icon rotate-n-15">
-                     </div>
-                     <div class="sidebar-brand-text mx-3 d-flex align-center" style="gap: 2px;"> <i style=" color:#6B4226;
-                     font-size:20px;" class="fa-solid fa-mug-saucer"></i> kenangansenja </div>
-                 </a>
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                    </div>
+                    <div class="sidebar-brand-text mx-3 d-flex align-center" style="gap: 2px;"> <i
+                            style=" color:#6B4226;
+                     font-size:20px;"
+                            class="fa-solid fa-mug-saucer"></i>kenangan<span class="senja">senja</span></div>
+                </a>
 
-                 <!-- Divider -->
-                 <hr class="sidebar-divider my-0">
+                <!-- Divider -->
+                <hr class="sidebar-divider my-0">
 
-                 <!-- Nav Item - Dashboard -->
-                 <li class="nav-item active">
-                     <a class="nav-link" href="/dashboard">
-                         <i class="icon-side fas fa-fw fa-tachometer-alt"></i>
-                         <span>Dashboard</span></a>
-                 </li>
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item active" id="sideBar-link">
+                    <a class="nav-link" href="/dashboard">
+                        <i class="icon-side fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a>
+                </li>
 
-                 <!-- Divider -->
-                 <hr class="sidebar-divider">
+                <!-- Divider -->
+                <hr class="sidebar-divider">
 
-                 <!-- Heading -->
-                 <div style="color:#6B4226;" class="sidebar-heading">
-                     Interface
-                 </div>
+                <!-- Heading -->
+                <div style="color:#6B4226;" class="sidebar-heading">
+                    Interface
+                </div>
 
-                 <!-- Nav Item - Pages Collapse Menu -->
-                 <li class="nav-item">
-                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                         aria-expanded="true" aria-controls="collapseTwo">
-                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-cog"></i>
-                         <span>Components</span>
-                     </a>
-                     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                         <div class="bg-white py-2 collapse-inner rounded">
-                             <h6 class="collapse-header">Custom Components:</h6>
-                             <a class="collapse-item" href="buttons.html">Buttons</a>
-                             <a class="collapse-item" href="cards.html">Cards</a>
-                         </div>
-                     </div>
-                 </li>
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item" id="sideBar-link">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i style="color:#6B4226;" class="icon-side fas fa-fw fa-cog"></i>
+                        <span>Components</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Custom Components:</h6>
+                            <a class="collapse-item" href="buttons.html">Buttons</a>
+                            <a class="collapse-item" href="cards.html">Cards</a>
+                        </div>
+                    </div>
+                </li>
 
-                 <!-- Nav Item - Utilities Collapse Menu -->
-                 <li class="nav-item">
-                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                         aria-expanded="true" aria-controls="collapseUtilities">
-                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-wrench"></i>
-                         <span>Utilities</span>
-                     </a>
-                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                         data-parent="#accordionSidebar">
-                         <div class="bg-white py-2 collapse-inner rounded">
-                             <h6 class="collapse-header">Custom Utilities:</h6>
-                             <a class="collapse-item" href="utilities-color.html">Colors</a>
-                             <a class="collapse-item" href="utilities-border.html">Borders</a>
-                             <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                             <a class="collapse-item" href="utilities-other.html">Other</a>
-                         </div>
-                     </div>
-                 </li>
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <li class="nav-item" id="sideBar-link">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i style="color:#6B4226;" class="icon-side fas fa-fw fa-wrench"></i>
+                        <span>Utilities</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Custom Utilities:</h6>
+                            <a class="collapse-item" href="utilities-color.html">Colors</a>
+                            <a class="collapse-item" href="utilities-border.html">Borders</a>
+                            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                            <a class="collapse-item" href="utilities-other.html">Other</a>
+                        </div>
+                    </div>
+                </li>
 
-                 <!-- Divider -->
-                 <hr class="sidebar-divider">
+                <!-- Divider -->
+                <hr class="sidebar-divider">
 
-                 <!-- Heading -->
-                 <div style="color:#6B4226;" class="sidebar-heading">
-                     Addons
-                 </div>
+                <!-- Heading -->
+                <div style="color:#6B4226;" class="sidebar-heading">
+                    Addons
+                </div>
 
-                 <!-- Nav Item - Pages Collapse Menu -->
-                 <li class="nav-item">
-                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                         aria-expanded="true" aria-controls="collapsePages">
-                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-folder"></i>
-                         <span>Pages</span>
-                     </a>
-                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                         <div class="bg-white py-2 collapse-inner rounded">
-                             <h6 class="collapse-header">Login Screens:</h6>
-                             <a class="collapse-item" href="login.html">Login</a>
-                             <a class="collapse-item" href="register.html">Register</a>
-                             <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                             <div class="collapse-divider"></div>
-                             <h6 class="collapse-header">Other Pages:</h6>
-                             <a class="collapse-item" href="404.html">404 Page</a>
-                             <a class="collapse-item" href="blank.html">Blank Page</a>
-                         </div>
-                     </div>
-                 </li>
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item" id="sideBar-link">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i style="color:#6B4226;" class="icon-side fas fa-fw fa-folder"></i>
+                        <span>Pages</span>
+                    </a>
+                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
+                        data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Login Screens:</h6>
+                            <a class="collapse-item" href="login.html">Login</a>
+                            <a class="collapse-item" href="register.html">Register</a>
+                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                            <div class="collapse-divider"></div>
+                            <h6 class="collapse-header">Other Pages:</h6>
+                            <a class="collapse-item" href="404.html">404 Page</a>
+                            <a class="collapse-item" href="blank.html">Blank Page</a>
+                        </div>
+                    </div>
+                </li>
 
-                 <!-- Nav Item - Charts -->
-                 <li class="nav-item">
-                     <a class="nav-link" href="charts.html">
-                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-chart-area"></i>
-                         <span>Charts</span></a>
-                 </li>
+                <!-- Nav Item - Charts -->
+                <li class="nav-item" id="sideBar-link">
+                    <a class="nav-link" href="charts.html">
+                        <i style="color:#6B4226;" class="icon-side fas fa-fw fa-chart-area"></i>
+                        <span>Charts</span></a>
+                </li>
 
-                 <!-- Nav Item - Tables -->
-                 <li class="nav-item">
-                     <a class="nav-link" href="tables.html">
-                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-table"></i>
-                         <span>Tables</span></a>
-                 </li>
-                 
-                 <li class="nav-item">
+                <!-- Nav Item - Tables -->
+                <li class="nav-item" id="sideBar-link">
+                    <a class="nav-link" href="tables.html">
+                        <i style="color:#6B4226;" class="icon-side fas fa-fw fa-table"></i>
+                        <span>Tables</span></a>
+                </li>
+
+                <li class="nav-item" id="sideBar-link">
                     <a class="nav-link" href="">
-                        <i style="color: red;" class="icon-side logout-icon fa-solid fa-arrow-right-from-bracket text-red-700"></i>
+                        <i style="color: red;"
+                            class="icon-side logout-icon fa-solid fa-arrow-right-from-bracket text-red-700"></i>
                         <span style="color: red;" class="text-red-700">logout</span>
                     </a>
-                 </li>  
-                 
-                 <!-- Divider -->
-                 <hr class="sidebar-divider d-none d-md-block">
+                </li>
 
-                 <!-- Sidebar Toggler (Sidebar) -->
-                 <div class="text-center d-none d-md-inline">
-                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                 </div>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
 
-                 <!-- Sidebar Message -->
-                 <div class="sidebar-card d-none d-lg-flex">
-                     <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                     <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                     <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-                 </div>
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+
+                <!-- Sidebar Message -->
+                <div class="sidebar-card d-none d-lg-flex">
+                    <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
+                    <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features,
+                        components, and more!</p>
+                    <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
+                        Pro!</a>
+                </div>
 
 
-             </ul>
+            </ul>
 
-         </div>
+        </div>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -238,8 +252,8 @@
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small"
+                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn bg-light" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -297,7 +311,8 @@
                                     </div>
                                     <div>
                                         <div class="small text-gray-500">December 12, 2019</div>
-                                        <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                        <span class="font-weight-bold">A new monthly report is ready to
+                                            download!</span>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -322,7 +337,8 @@
                                         Spending Alert: We've noticed unusually high spending for your account.
                                     </div>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All
+                                    Alerts</a>
                             </div>
                         </li>
 
@@ -342,8 +358,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -354,8 +369,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -366,20 +380,20 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                            alt="...">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                        <div class="text-truncate">Last month's report looks great, I am very happy
+                                            with
                                             the progress so far, keep up the good work!</div>
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                            alt="...">
+                                        <img class="rounded-circle"
+                                            src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -388,7 +402,8 @@
                                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">Read More
+                                    Messages</a>
                             </div>
                         </li>
 
@@ -399,8 +414,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -418,7 +432,8 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -451,10 +466,11 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 saldo</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">IDR 40.000</div>
+                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">IDR
+                                                40.000</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -469,10 +485,11 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 pengeluaran</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">IDR 215.000</div>
+                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">IDR
+                                                215.000</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -485,11 +502,13 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">discount
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                discount
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12%</div>
+                                                    <div id="saldoUser"
+                                                        class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12%</div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -516,7 +535,8 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 histori transaksi</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">18
+                                            </div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -539,8 +559,9 @@
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold">data pengeluaran bulan ini</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -570,8 +591,9 @@
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold ">Revenue Sources</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button"
+                                            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
@@ -736,7 +758,8 @@
                                             target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
                                         constantly updated collection of beautiful svg images that you can use
                                         completely free and without attribution!</p>
-                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
+                                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations
+                                        on
                                         unDraw &rarr;</a>
                                 </div>
                             </div>
@@ -750,7 +773,8 @@
                                     <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
                                         CSS bloat and poor page performance. Custom CSS classes are used to create
                                         custom components and custom utility classes.</p>
-                                    <p class="mb-0">Before working with this theme, you should become familiar with the
+                                    <p class="mb-0">Before working with this theme, you should become familiar with
+                                        the
                                         Bootstrap framework, especially the utility classes.</p>
                                 </div>
                             </div>
