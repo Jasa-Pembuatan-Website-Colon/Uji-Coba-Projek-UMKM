@@ -5,8 +5,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
-
+use App\Http\Controllers\PaymentController;
+use Illuminate\Support\Facades\Http;
 
 
 Route::get('/', function () {
@@ -38,4 +38,16 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/payment', function () {
     return view('payment');
+});
+
+Route::post('/checkout', [PaymentController::class, 'checkout']);
+
+
+Route::get('/midtrans-test/{orderId}', function ($orderId) {
+    $serverKey = env('MIDTRANS_SERVER_KEY');
+
+    $response = Http::withBasicAuth($serverKey, '')
+        ->get("https://api.sandbox.midtrans.com/v2/{$orderId}/status");
+
+    return $response->json();
 });

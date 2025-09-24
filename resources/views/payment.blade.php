@@ -127,7 +127,7 @@
         <p>Pilih metode pembayaran favoritmu ☕️</p>
 
         <!-- Laravel form -->
-        <form method="POST" action="">
+        <form method="POST" action="/checkout">
             @csrf
 
             <!-- Pilihan metode -->
