@@ -85,6 +85,15 @@
         color: #9b5e36;
         text-decoration: underline;
     }
+
+    .btn-logout{
+        border: none;
+    }
+
+    .btn-logout:hover{
+        background-color: #6B4226;
+        border-radius: 10px;
+    }
 </style>
 
 <body id="page-top">
@@ -172,7 +181,7 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                         aria-expanded="true" aria-controls="collapsePages">
                         <i style="color:#6B4226;" class="icon-side fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>order</span>
                     </a>
                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages"
                         data-parent="#accordionSidebar">
@@ -206,7 +215,7 @@
                 <form action="{{ route ('logout')}}" method="post">
                     @csrf
                 <li class="nav-item" id="sideBar-link">
-                    <button class="nav-link" type="submit">
+                    <button class="nav-link btn-logout" type="submit">
                         <i style="color: red;"
                             class="icon-side logout-icon fa-solid fa-arrow-right-from-bracket text-red-700"></i>
                         <span style="color: red;" class="text-red-700">logout</span>
