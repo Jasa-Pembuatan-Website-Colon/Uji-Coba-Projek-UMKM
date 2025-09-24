@@ -203,14 +203,16 @@
                         <span>Tables</span></a>
                 </li>
 
+                <form action="{{ route ('logout')}}" method="post">
+                    @csrf
                 <li class="nav-item" id="sideBar-link">
-                    <a class="nav-link" href="">
+                    <button class="nav-link" type="submit">
                         <i style="color: red;"
                             class="icon-side logout-icon fa-solid fa-arrow-right-from-bracket text-red-700"></i>
                         <span style="color: red;" class="text-red-700">logout</span>
-                    </a>
+                    </button>
                 </li>
-
+                </form>
                 <!-- Divider -->
                 <hr class="sidebar-divider d-none d-md-block">
 
