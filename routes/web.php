@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,5 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/payment', function () {
     return view('payment');
 });
+
+Route::get('/checkout', [PaymentController::class, 'checkout']);

@@ -94,7 +94,14 @@
             margin: 0.4rem 0;
         }
 
+        .div-btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+
         .payment-btn {
+            display: block;
+            text-align: center;
             width: 100%;
             padding: 0.9rem;
             border: none;
@@ -105,7 +112,6 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 1.5rem;
         }
 
         .payment-btn:hover {
@@ -139,8 +145,7 @@
                 </div>
 
                 <div class="payment-method" onclick="selectPayment(this)">
-                    <img src="img/bank-bri-logo-png_seeklogo-355613-removebg-preview.png"
-                        alt="BRI">
+                    <img src="img/bank-bri-logo-png_seeklogo-355613-removebg-preview.png" alt="BRI">
                     <span>BRI</span>
                 </div>
 
@@ -167,9 +172,11 @@
             </div>
 
             <!-- Submit -->
-            <button type="submit" class="payment-btn">
-                <i class="fas fa-credit-card"></i> Bayar Sekarang
-            </button>
+            <div class="div-btn">
+                <a href="/checkout" type="submit" class="payment-btn">
+                    <i class="fas fa-credit-card"></i> Bayar Sekarang
+                </a>
+            </div>
         </form>
     </div>
 
