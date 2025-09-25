@@ -105,7 +105,7 @@
     <div class="row">
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="/payment"><i data-feather="shopping-cart"></i></a>
           <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">
@@ -125,7 +125,7 @@
       </div>
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="/payment"><i data-feather="shopping-cart"></i></a>
           <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">
@@ -145,7 +145,7 @@
       </div>
       <div class="product-card">
         <div class="product-icons">
-          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="/payment "><i data-feather="shopping-cart"></i></a>
           <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">

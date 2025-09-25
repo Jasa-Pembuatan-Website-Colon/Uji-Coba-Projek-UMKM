@@ -1,3 +1,4 @@
+   <link rel="stylesheet" href="css/style.css">
    <nav class="navbar">
         <a href="#" class="navbar-logo">kenangan<span>senja</span>.</a>
 

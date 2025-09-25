@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -28,11 +29,30 @@ class DashboardController extends Controller
             $sales = collect();
         }
 
-        return view('dashboard', compact(
+       
+
+    $saldo = DB::table('transaksi')
+                ->selectRaw("SUM(CASE WHEN jenis='masuk' THEN jumlah ELSE -jumlah END) as saldo")
+                ->value('saldo');
+
+    // Total pengeluaran
+    $pengeluaran = DB::table('transaksi')
+                ->where('jenis', 'keluar')
+                ->sum('jumlah');
+
+    // Transaksi terbaru
+    $transaksi = DB::table('transaksi')
+                ->orderBy('tanggal', 'desc')
+                ->limit(10)
+                ->get();
+    
+    return view('dashboard', compact(
             'totalMenu',
             'totalOrderToday',
             'totalRevenue',
-            'sales'
+            'sales',
+            'saldo',
+            'pengeluaran',
+            'transaksi'
         ));
-    }
-}
+}}
