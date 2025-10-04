@@ -424,7 +424,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Halo, {{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -477,7 +477,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 saldo</div>
-                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">IDR
+                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">
                                                 Rp {{ number_format($saldo ?? 0, 0, ',', '.') }}   </div>
                                         </div>
                                         <div class="col-auto">
@@ -487,8 +487,8 @@
                                    
                                 </div> 
                                 <div class="col-auto">
-                                        <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-sm mt-3 flex align-center">
-                                            <i class="fas fa-plus fa-2x text-gray-300"></i>
+                                        <a href="{{ route('transaksi.create') }}" class="btn btn-primary btn-sm flex" style=" align-items: center !important;">
+                                            <i class="fas fa-plus fa-1x text-gray-300"></i>
                                             Tambah Saldo
                                         </a>
                                         </div>
@@ -503,7 +503,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 pengeluaran</div>
-                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">IDR
+                                            <div id="saldoUser" class="h5 mb-0 font-weight-bold text-gray-800">
                                                 Rp {{ number_format($pengeluaran, 0, ',', '.') }}</div>
                                         </div>
                                         <div class="col-auto">

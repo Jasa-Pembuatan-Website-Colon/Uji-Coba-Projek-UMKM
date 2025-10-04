@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
+use Illuminate\Support\Facades\Auth;
 
 class TransaksiController extends Controller
 {
@@ -19,13 +20,13 @@ class TransaksiController extends Controller
         'jumlah' => 'required|numeric|min:1',
     ]);
 
-    Transaksi::create([
-        'tanggal' => now(),
-        'keterangan' => $request->keterangan,
-        'jenis' => 'masuk', // penting! biar saldo bertambah
-        'jumlah' => $request->jumlah,
-    ]);
-
+Transaksi::create([
+    'user_id' => Auth::id(),   // ini sama persis hasilnya dengan auth()->id()
+    'tanggal' => now(),
+    'keterangan' => $request->keterangan,
+    'jenis' => 'masuk',
+    'jumlah' => $request->jumlah,
+]);
 
         return redirect()->route('dashboard')->with('success', 'Saldo berhasil ditambahkan!');
     }

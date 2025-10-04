@@ -11,10 +11,16 @@ class Transaksi extends Model
     protected $table = 'transaksi';
 
     protected $fillable = [
+        'user_id',
         'tanggal',
         'keterangan',
         'jenis',
         'jumlah',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
 
