@@ -6,7 +6,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TransaksiController;
 
 
 
@@ -42,3 +43,17 @@ Route::get('/payment', function () {
 });
 
 Route::get('/checkout', [PaymentController::class, 'checkout']);
+
+Route::get('/error', function () {
+    return view('401');
+});
+
+Route::get('/not-found' , function () {
+    return view('404');
+});
+
+Route::get('/dataerror', function() {
+    return view('500');
+});
+Route::get('/transaksi/tambah', [TransaksiController::class, 'create'])->name('transaksi.create');
+Route::post('/transaksi', [TransaksiController::class, 'store'])->name('transaksi.store');

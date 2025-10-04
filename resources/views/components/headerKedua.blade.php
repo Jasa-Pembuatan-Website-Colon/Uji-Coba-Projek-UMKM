@@ -2,7 +2,7 @@
         <a href="#" class="navbar-logo">kenangan<span>senja</span>.</a>
 
         <div class="navbar-nav">
-            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
             <a href="/#about">Tentang Kami</a>
             <a href="/#menu">Menu</a>
             <a href="/#products">Produk</a>

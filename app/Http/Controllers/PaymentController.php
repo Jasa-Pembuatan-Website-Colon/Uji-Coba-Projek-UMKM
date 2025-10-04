@@ -18,11 +18,11 @@ class PaymentController extends Controller
     public function checkout(Request $request)
     {
         $orderId = 'ORDER-' . time();
-        $amount = 100000; // contoh 100 ribu
+        $amount = 200000; // contoh 100 ribu
 
         $customer = [
-            'first_name' => 'Budi',
-            'email' => 'budi@example.com',
+            'first_name' => 'Hadi',
+            'email' => 'hadi@gmail.com',
             'phone' => '08123456789',
         ];
 

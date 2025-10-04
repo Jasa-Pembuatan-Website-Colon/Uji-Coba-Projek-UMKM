@@ -1,0 +1,58 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="p-6">
+    <h1 class="text-2xl font-bold mb-6">Dashboard</h1>
+
+    {{-- Ringkasan --}}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Saldo -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 border-l-4 border-green-500">
+            <h2 class="text-sm font-semibold text-gray-600">Saldo</h2>
+            <p class="text-2xl font-bold text-gray-800 mt-2">
+Rp {{ number_format($saldo ?? 0, 0, ',', '.') }}            </p>
+        </div>
+
+        <!-- Pengeluaran -->
+        <div class="bg-white shadow-lg rounded-2xl p-6 border-l-4 border-red-500">
+            <h2 class="text-sm font-semibold text-gray-600">Pengeluaran</h2>
+            <p class="text-2xl font-bold text-gray-800 mt-2">
+                Rp {{ number_format($pengeluaran, 0, ',', '.') }}
+            </p>
+        </div>
+    </div>
+
+    {{-- Daftar Transaksi --}}
+    <div class="mt-10">
+        <h2 class="text-xl font-semibold mb-4">Daftar Transaksi Terakhir</h2>
+        <div class="bg-white shadow-lg rounded-2xl p-4">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b">
+                        <th class="p-2">Tanggal</th>
+                        <th class="p-2">Keterangan</th>
+                        <th class="p-2">Jenis</th>
+                        <th class="p-2">Jumlah</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($transaksi as $t)
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="p-2">{{ $t->tanggal }}</td>
+                            <td class="p-2">{{ $t->keterangan }}</td>
+                            <td class="p-2">
+                                @if($t->jenis == 'masuk')
+                                    <span class="text-green-600 font-semibold">Masuk</span>
+                                @else
+                                    <span class="text-red-600 font-semibold">Keluar</span>
+                                @endif
+                            </td>
+                            <td class="p-2">Rp {{ number_format($t->jumlah, 0, ',', '.') }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@endsection
