@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use App\Models\Order;
+use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -28,17 +30,14 @@ class DashboardController extends Controller
         if (! $sales) {
             $sales = collect();
         }
+        $user = Auth::user();
+           $userId = Auth::id();
 
-       
-
-    $saldo = DB::table('transaksi')
-                ->selectRaw("SUM(CASE WHEN jenis='masuk' THEN jumlah ELSE -jumlah END) as saldo")
-                ->value('saldo');
+    $saldo = Transaksi::where('user_id', $userId)->where('jenis', 'masuk')->sum('jumlah')
+            - Transaksi::where('user_id', $userId)->where('jenis', 'keluar')->sum('jumlah');
 
     // Total pengeluaran
-    $pengeluaran = DB::table('transaksi')
-                ->where('jenis', 'keluar')
-                ->sum('jumlah');
+        $pengeluaran = Transaksi::where('user_id', $userId)->where('jenis', 'keluar')->sum('jumlah');
 
     // Transaksi terbaru
     $transaksi = DB::table('transaksi')
@@ -55,4 +54,13 @@ class DashboardController extends Controller
             'pengeluaran',
             'transaksi'
         ));
-}}
+}
+
+public function reset()
+{
+    Transaksi::where('user_id', Auth::id())->delete();
+    return redirect()->route('dashboard')->with('success', 'Saldo kamu berhasil direset!');
+}
+
+
+}
